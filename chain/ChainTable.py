@@ -28,7 +28,6 @@ class ChainTable(object):
 
     # 添加元素到链表尾部
     def append(self, data):
-
         # 生成节点
         node = Node(data)
 
@@ -45,7 +44,6 @@ class ChainTable(object):
 
     # 插入节点到链表
     def insert(self, index, data):
-
         if index < 0 or index > self.getLength():
             return None
 
@@ -143,6 +141,3 @@ class ChainTable(object):
     # 清空链表
     def clear(self):
         self.head = None
-
-
-

@@ -18,7 +18,7 @@ class Node(object):
         return str(self.data)
 
 '''
-双向链表类
+循环链表类
 '''
 class CircleChainTable(object):
 
@@ -43,7 +43,7 @@ class CircleChainTable(object):
             pointer = self.head   # pointer指向rear节点
             while pointer != self.rear:
                 pointer = pointer._next  # 遍历到rear节点
-            pointer._next = node  # 遍历到最后1个节点，将新节点append上
+            pointer._next = node  # # 遍历到最后1个节点，将新节点append上，pointer为倒数第2个节点
             self.rear = pointer._next  # 更新rear到最后1个节点
             self.rear._next = self.head  # 更新rear.next -> head
 
