@@ -18,13 +18,14 @@ class Node(object):
         return str(self.data)
 
 '''
-单向链表类
+双向链表类
 '''
-class ChainTable(object):
+class CircleChainTable(object):
 
     # 初始化链表
     def __init__(self):
         self.head = None
+        self.rear = None
 
     # 添加元素到链表尾部
     def append(self, data):
@@ -32,16 +33,19 @@ class ChainTable(object):
         # 生成节点
         node = Node(data)
 
-        # 若列表为空，则节点赋给head
+        # 若列表为空，则节点赋给head, rear
         if self.head is None:
             self.head = node
+            self.rear = node
+            self.head._next = self.rear  # head.next -> rear
+            self.rear._next = self.head  # rear.next -> head
         else:
-            pointer = self.head   # pointer指向head节点
-            while pointer._next:
-                pointer = pointer._next
+            pointer = self.head   # pointer指向rear节点
+            while pointer != self.rear:
+                pointer = pointer._next  # 遍历到rear节点
             pointer._next = node  # 遍历到最后1个节点，将新节点append上
-
-
+            self.rear = pointer._next  # 更新rear到最后1个节点
+            self.rear._next = self.head  # 更新rear.next -> head
 
     # 插入节点到链表
     def insert(self, index, data):
@@ -57,17 +61,18 @@ class ChainTable(object):
             tmp_head = self.head
             self.head = node
             self.head._next = tmp_head
+            self.rear._next = self.head  # 更新rear的后继为新的head
         elif index == self.getLength():
             self.append(data)  # 节点插入尾部
         else:
             pointer = self.head
             i = 0
-            while i != index-1:  # 移动指针到index-1位置
+            while i != index-1:  # 移动指针到index-1位置，找到要插入节点的上一个节点
                 pointer = pointer._next
                 i += 1
-            ori_indexNode = pointer._next
-            pointer._next = node
-            node._next = ori_indexNode
+            ori_indexNode = pointer._next  # 备份原先位置的节点
+            pointer._next = node  # 新节点顶替原先节点的位置，作为上一个节点的后继
+            node._next = ori_indexNode  # 原先节点作为新节点的后继
 
 
     # 删除节点
@@ -79,14 +84,16 @@ class ChainTable(object):
         # 删除head节点
         if index == 0:
             self.head = self.head._next
+            self.rear._next = self.head  # 更新rear的后继为新的head
         elif index == self.getLength()-1:  # 删除tail节点
             pointer = self.head
             i = 0
-            while i != self.getLength()-1:
+            while i != self.getLength()-1:  # 遍历至rear节点的上一个节点
                 pre = pointer
                 pointer = pointer._next
                 i += 1
-            pre._next = None
+            self.rear = pre  # 更新rear节点为上一个节点
+            self.rear._next = self.head  # 更新新rear节点的后继节点为head
         else:
             pointer = self.head
             i = 0
@@ -132,17 +139,23 @@ class ChainTable(object):
 
     # 获取链表长度
     def getLength(self):
+        '''
+        1. 从head一直遍历到rear，统计节点数目
+        2. 最后把rear节点也算上
+        :return:
+        '''
         length = 0
         pointer = self.head
-        while pointer:
+        while pointer != self.rear:  # 遍历至rear
             length += 1
             pointer = pointer._next
-        return length
+        return length + 1  # 还要将rear节点算上
 
 
     # 清空链表
     def clear(self):
         self.head = None
+        self.rear = None
 
 
 
