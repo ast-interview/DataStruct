@@ -2,7 +2,7 @@
 
 '''
 @Author Ivanli
-@Time   2017.12.18
+@Time   2017.12.19
 '''
 
 '''
@@ -157,5 +157,27 @@ class CircleChainTable(object):
         self.head = None
         self.rear = None
 
+'''
+操作链表类
+'''
+class OperateChain(object):
 
+    def __init__(self):
+        pass
+
+    # 合并循环链表
+    def merge(self, CirChain_1, CirChain_2):
+
+        merge_chain = CircleChainTable()
+
+        head_1 = CirChain_1.head
+        rear_1 = CirChain_1.rear
+        head_2 = CirChain_2.head
+        rear_2 = CirChain_2.rear
+        rear_1._next = head_2
+        rear_2._next = head_1
+
+        merge_chain.head = head_1
+        merge_chain.rear = rear_2
+        return merge_chain
 
