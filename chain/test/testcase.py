@@ -3,7 +3,7 @@
 @Author Ivanli
 @Time   2017.12.19
 '''
-from chain.ChainTable import ChainTable
+from chain.main.ChainTable import ChainTable
 
 '''
 测试用例

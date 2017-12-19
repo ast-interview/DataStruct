@@ -3,11 +3,11 @@
 @Author Ivanli
 @Time   2017.12.19
 '''
-from chain.ChainTable import ChainTable
-from chain.CircleChainTable import CircleChainTable
-from chain.CircleChainTable import OperateChain as CircleOper
-from chain.TwoWayCircleChainTable import TwoWayCircleChainTable
-from chain.TwoWayCircleChainTable import OperateChain as TwoWayOper
+from chain.main.ChainTable import ChainTable
+from chain.main.CircleChainTable import CircleChainTable
+from chain.main.CircleChainTable import OperateChain as CircleOper
+from chain.main.TwoWayCircleChainTable import OperateChain as TwoWayOper
+from chain.main.TwoWayCircleChainTable import TwoWayCircleChainTable
 from testcase import TestCase
 
 '''
