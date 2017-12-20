@@ -3,7 +3,6 @@
 @author Ivanli
 @time   2017.12.20
 '''
-from stack.main.OrderStack import OrderStack
 from testcase import TestCase
 
 '''
@@ -18,10 +17,21 @@ class TestSuites(object):
         print "** test OrderStack **"
         maxsize = 10
         tc = TestCase()
-        stack = OrderStack()
         stack = tc.test_createStack(maxsize)
+        stack = tc.test_stackIsEmpty(stack)
+        for i in range(maxsize):
+            stack = tc.test_push(i)
+        tc.test_push(11)
+        for i in range(maxsize):
+            stack = tc.test_getTop(stack)
+        tc.test_getTop(stack)
+        stack = tc.test_stackIsEmpty(stack)
+        stack = tc.test_push(stack, 1)
+        tc.test_getLength(stack)
+        stack = tc.test_clearStack(stack)
+        stack = tc.test_destroyStack(stack)
 
 
 if __name__ == "__main__":
     ts = TestSuites()
-    ts.testChain()
+    ts.testOrderStack()
