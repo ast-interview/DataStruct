@@ -55,13 +55,8 @@ class TestCase(object):
     def test_stackIsEmpty(self, stack):
         print "---------------- "
         print "## 栈是否为空 ##"
-        if stack:
-            print "栈不为空"
-            stack.push(1)
-            print stack.IsEmpty()
+        if stack.isEmpty():
             print "栈为空"
-            stack.clearStack()
-            print stack.IsEmpty()
         else:
             print "Error: 栈不存在 !"
         return stack
@@ -84,14 +79,13 @@ class TestCase(object):
         print "## 入栈 ##"
         if stack:
             stack.push(data)
-            print stack
         else:
             print "Error: 栈不存在"
         return stack
 
 
     # 出栈
-    def pop(self, stack):
+    def test_pop(self, stack):
         print "---------------- "
         print "## 出栈 ##"
         if stack:
@@ -114,3 +108,20 @@ class TestCase(object):
             print stack.getLength()
         else:
             print "Error: 栈不存在"
+
+if __name__ == "__main__":
+    maxsize = 10
+    tc = TestCase()
+    stack = tc.test_createStack(maxsize)
+    stack = tc.test_stackIsEmpty(stack)
+    for i in range(11):
+        stack = tc.test_push(stack, i)
+    tc.test_getLength(stack)
+    stack = tc.test_getTop(stack)
+    for i in range(10):
+        stack = tc.test_pop(stack)
+    tc.test_getLength(stack)
+    tc.test_stackIsEmpty(stack)
+    tc.test_push(stack, 1)
+    stack = tc.test_clearStack(stack)
+    tc.test_stackIsEmpty(stack)

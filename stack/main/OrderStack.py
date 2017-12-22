@@ -19,10 +19,11 @@ class OrderStack(object):
     # 清空栈
     def clear(self):
         self.stack = []
+        self.top = -1
 
     # 栈是否为空
-    def IsEmpty(self):
-        if self.top == -1:
+    def isEmpty(self):
+        if self.stack != None and self.top == -1:
             return True
         else:
             return False
@@ -36,7 +37,7 @@ class OrderStack(object):
 
     # 入栈
     def push(self, data):
-        if self.top != self.maxsize:
+        if self.top != self.maxsize - 1:
             self.stack.append(data)
             self.top += 1
         else:
@@ -56,7 +57,32 @@ class OrderStack(object):
     def getLength(self):
         if self.stack:
             return len(self.stack)
+        elif self.stack == []:
+            return 0
         else:
             print "Stack is not existed"
             return None
 
+# if __name__ == "__main__":
+#     maxsize = 5
+#     stack = OrderStack(maxsize)
+#     # print stack.isEmpty()
+#     # stack.push(1)
+#     # print stack.isEmpty()
+#     # stack.pop()
+#     # print stack.isEmpty()
+#     for i in range(6):
+#         stack.push(i)
+#     print stack.getLength()
+#     for i in range(6):
+#         stack.pop()
+#     print stack.getLength()
+#     print stack.isEmpty()
+#     print stack.getTop()
+#     for i in range(5):
+#         print stack.push(i)
+#     print stack.getTop()
+#     stack.clear()
+#     print stack.isEmpty()
+#     stack.destroy()
+#     print stack.isEmpty()
