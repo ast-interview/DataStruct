@@ -26,14 +26,14 @@ class TestCase(object):
         print "---------------- "
         print "## 销毁栈 ##"
         if stack:
-            stack.destroy()
+            stack = stack.destroy()
         else:
             print "栈不存在，新建栈"
             stack = OrderStack(maxsize)
             print "入栈"
             stack.push(1)
             print "销毁栈"
-            stack.destroy()
+            stack = stack.destroy()
         print stack
         return stack
 
@@ -55,10 +55,12 @@ class TestCase(object):
     def test_stackIsEmpty(self, stack):
         print "---------------- "
         print "## 栈是否为空 ##"
-        if stack.isEmpty():
+        if stack == None:
+            print "Error: 栈不存在！"
+        elif stack.isEmpty():
             print "栈为空"
         else:
-            print "Error: 栈不存在 !"
+            print "栈为不空"
         return stack
 
     # 获取栈顶元素
@@ -113,15 +115,18 @@ if __name__ == "__main__":
     maxsize = 10
     tc = TestCase()
     stack = tc.test_createStack(maxsize)
-    stack = tc.test_stackIsEmpty(stack)
-    for i in range(11):
-        stack = tc.test_push(stack, i)
-    tc.test_getLength(stack)
-    stack = tc.test_getTop(stack)
-    for i in range(10):
-        stack = tc.test_pop(stack)
-    tc.test_getLength(stack)
-    tc.test_stackIsEmpty(stack)
-    tc.test_push(stack, 1)
-    stack = tc.test_clearStack(stack)
-    tc.test_stackIsEmpty(stack)
+    # stack = tc.test_stackIsEmpty(stack)
+    # for i in range(11):
+    #     stack = tc.test_push(stack, i)
+    # tc.test_getLength(stack)
+    # stack = tc.test_getTop(stack)
+    # for i in range(10):
+    #     stack = tc.test_pop(stack)
+    # tc.test_getLength(stack)
+    # tc.test_stackIsEmpty(stack)
+    # tc.test_push(stack, 1)
+    # stack = tc.test_clearStack(stack)
+    # tc.test_stackIsEmpty(stack)
+    print stack == None
+    stack = tc.test_destroyStack(stack, maxsize)
+    print stack == None

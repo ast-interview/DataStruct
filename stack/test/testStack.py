@@ -1,8 +1,13 @@
 # coding: utf-8
+class Hello(object):
+    def clear(self):
+        self = None
 
 if __name__ == "__main__":
-    l = []
-    m = []
-    print l is []
-    print id(l)
-    print id([])
+    h = Hello()
+    m = None
+    print type(h), type(m)
+    print h, m
+    h.clear()
+    print type(h)
+    print h

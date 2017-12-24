@@ -22,15 +22,19 @@ class TestSuites(object):
         for i in range(maxsize):
             stack = tc.test_push(stack, i)
         tc.test_push(stack, 6)
+        stack = tc.test_getTop(stack)
+        print tc.test_getLength(stack)
         for i in range(maxsize):
-            stack = tc.test_getTop(stack)
-        # tc.test_getTop(stack)
-        # stack = tc.test_stackIsEmpty(stack)
-        # stack = tc.test_push(stack, 1)
-        # tc.test_getLength(stack)
-        # stack = tc.test_clearStack(stack)
-        # stack = tc.test_destroyStack(stack)
-
+            stack = tc.test_pop(stack)
+        stack = tc.test_pop(stack)
+        print tc.test_stackIsEmpty(stack)
+        stack = tc.test_push(stack, 1)
+        print tc.test_stackIsEmpty(stack)
+        stack = tc.test_clearStack(stack)
+        stack = tc.test_stackIsEmpty(stack)
+        stack = tc.test_destroyStack(stack, maxsize)
+        stack = tc.test_destroyStack(stack, maxsize)
+        print stack == None
 
 if __name__ == "__main__":
     ts = TestSuites()

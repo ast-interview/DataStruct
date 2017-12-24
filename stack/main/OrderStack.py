@@ -14,7 +14,7 @@ class OrderStack(object):
 
     # 销毁栈
     def destroy(self):
-        self.stack = None
+        return None
 
     # 清空栈
     def clear(self):
@@ -63,9 +63,9 @@ class OrderStack(object):
             print "Stack is not existed"
             return None
 
-# if __name__ == "__main__":
-#     maxsize = 5
-#     stack = OrderStack(maxsize)
+if __name__ == "__main__":
+    maxsize = 5
+    stack = OrderStack(maxsize)
 #     # print stack.isEmpty()
 #     # stack.push(1)
 #     # print stack.isEmpty()
@@ -84,5 +84,7 @@ class OrderStack(object):
 #     print stack.getTop()
 #     stack.clear()
 #     print stack.isEmpty()
-#     stack.destroy()
+    stack.destroy()
 #     print stack.isEmpty()
+    print type(stack)
+    print stack == None
