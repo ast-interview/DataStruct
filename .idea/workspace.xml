@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="e452c110-8d8a-42b4-8f89-76438534876c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/DataStruct.iml" afterPath="$PROJECT_DIR$/.idea/DataStruct.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stack/main/MatchingParentheses.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stack/main/OrderStack.py" afterPath="$PROJECT_DIR$/stack/main/OrderStack.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stack/test/testStack.py" afterPath="$PROJECT_DIR$/stack/test/testStack.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stack/test/testcase.py" afterPath="$PROJECT_DIR$/stack/test/testcase.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stack/test/testsuites.py" afterPath="$PROJECT_DIR$/stack/test/testsuites.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,9 +13,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DataStruct$testsuites.coverage" NAME="testsuites Coverage Results" MODIFIED="1514122120213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stack/test" />
+    <SUITE FILE_PATH="coverage/DataStruct$testsuites.coverage" NAME="testsuites Coverage Results" MODIFIED="1514123082334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stack/test" />
+    <SUITE FILE_PATH="coverage/DataStruct$test.coverage" NAME="test Coverage Results" MODIFIED="1514125192892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DataStruct$testStack.coverage" NAME="testStack Coverage Results" MODIFIED="1514121438018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stack/test" />
     <SUITE FILE_PATH="coverage/DataStruct$OrderStack.coverage" NAME="OrderStack Coverage Results" MODIFIED="1514121097816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stack/main" />
+    <SUITE FILE_PATH="coverage/DataStruct$MatchingParentheses.coverage" NAME="MatchingParentheses Coverage Results" MODIFIED="1514125277584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stack/main" />
     <SUITE FILE_PATH="coverage/DataStruct$testcase.coverage" NAME="testcase Coverage Results" MODIFIED="1514122077960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stack/test" />
   </component>
   <component name="FileEditorManager">
@@ -55,11 +52,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testsuites.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="testsuites.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stack/test/testsuites.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
               <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatchingParentheses.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stack/main/MatchingParentheses.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -84,6 +91,8 @@
         <option value="$PROJECT_DIR$/stack/main/OrderStack.py" />
         <option value="$PROJECT_DIR$/stack/test/testcase.py" />
         <option value="$PROJECT_DIR$/stack/test/testsuites.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/stack/main/MatchingParentheses.py" />
       </list>
     </option>
   </component>
@@ -126,17 +135,6 @@
             <path>
               <item name="DataStruct" type="b2602c69:ProjectViewProjectNode" />
               <item name="DataStruct" type="462c0819:PsiDirectoryNode" />
-              <item name="chain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataStruct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataStruct" type="462c0819:PsiDirectoryNode" />
-              <item name="chain" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataStruct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataStruct" type="462c0819:PsiDirectoryNode" />
               <item name="stack" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -144,12 +142,6 @@
               <item name="DataStruct" type="462c0819:PsiDirectoryNode" />
               <item name="stack" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DataStruct" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataStruct" type="462c0819:PsiDirectoryNode" />
-              <item name="stack" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -178,8 +170,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.testsuites">
-    <configuration name="OrderStack" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.MatchingParentheses">
+    <configuration name="MatchingParentheses" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -192,7 +184,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="DataStruct" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stack/main/OrderStack.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stack/main/MatchingParentheses.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DataStruct" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -251,18 +261,20 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.testStack" />
       <item index="1" class="java.lang.String" itemvalue="Python.testsuites" />
-      <item index="2" class="java.lang.String" itemvalue="Python.OrderStack" />
-      <item index="3" class="java.lang.String" itemvalue="Python.testcase" />
+      <item index="2" class="java.lang.String" itemvalue="Python.testcase" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.MatchingParentheses" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.testsuites" />
-        <item index="1" class="java.lang.String" itemvalue="Python.testcase" />
-        <item index="2" class="java.lang.String" itemvalue="Python.testStack" />
-        <item index="3" class="java.lang.String" itemvalue="Python.OrderStack" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.MatchingParentheses" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.testsuites" />
+        <item index="3" class="java.lang.String" itemvalue="Python.testcase" />
+        <item index="4" class="java.lang.String" itemvalue="Python.testStack" />
       </list>
     </recent_temporary>
   </component>
@@ -293,7 +305,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2690141" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17464788" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -502,6 +514,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="23" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stack/main/MatchingParentheses.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
