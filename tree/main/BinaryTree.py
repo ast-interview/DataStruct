@@ -5,10 +5,10 @@
 @time:   2018/01/05
 '''
 
-'''
-结点类
-'''
 class BitNode(object):
+    '''
+    结点类
+    '''
 
     def __init__(self, data=-1):
         self.data = data     # 结点数据
@@ -18,10 +18,10 @@ class BitNode(object):
     def __repr__(self):
         return str(self.data)
 
-'''
-二叉树类
-'''
 class BinaryTree(object):
+    '''
+    二叉树类
+    '''
 
     # 构造空树
     def __init__(self):
@@ -42,7 +42,7 @@ class BinaryTree(object):
             else:
                 treeNode.rchild = node   # 否则对右孩子赋值
                 self.myQueue.append(treeNode.rchild)
-                self.myQueue.pop(0)  # 弹出父结点
+                self.myQueue.pop(0)  # 弹出父结点，让当前父节点的左/右结点作为下一次要插入结点的父结点
 
     # 利用递归实现树的先序遍历
     def preOrderTraverse(self, root):

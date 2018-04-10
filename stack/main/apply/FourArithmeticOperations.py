@@ -62,7 +62,7 @@ class Convert(object):
         elif data in ["+", "-"]:
             return 0
 
-    # String expression -> list expression  "9+(3-1)*3+10/2" -> ['9', '+', '(', '3', '-', '1', ')', '*', '3', '+', '10', '/', '2']
+    # string expression -> list expression  "9+(3-1)*3+10/2" -> ['9', '+', '(', '3', '-', '1', ')', '*', '3', '+', '10', '/', '2']
     def convertToList(self, str_nifixExp):
         data = ""
         list_nifixExp = []
