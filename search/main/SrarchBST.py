@@ -16,17 +16,17 @@ class BST(object):
     '''
 
     def __init__(self):
-        self.p = None  # 父结点
+        self.curNode = None  # 当前结点
         self.root = None  # 根结点
 
-    def searchBST(self, key, node=None, p=None):
+    def searchBST(self, key, node=None, curNode=None):
         '''
         递归查找二叉排序树中是否存在key
         :param key: 要查找的key
         :return:
         '''
         if not node:  # 查找不成功
-            self.p = p  # self.p指向node的父结点
+            self.curNode = curNode  # self.curNode指向node的父结点
             return False
         elif key == node.data:  # 查找成功
             return True
@@ -41,25 +41,77 @@ class BST(object):
         :param key:
         :return:
         '''
-        if not self.searchBST(key, self.root, self.p):  # 查找不成功
+        if not self.searchBST(key, self.root, self.curNode):  # 查找不成功
             node = BiTNode(key)
-            if not self.p:  # 没有根结点，插入node作为新的根结点
+            if not self.curNode:  # 没有根结点，插入node作为新的根结点
                 self.root = node
-            elif key < self.p.data:  # 插入node为左孩子
-                self.p.lchild = node
+            elif key < self.curNode.data:  # 插入node为左孩子
+                self.curNode.lchild = node
             else:
-                self.p.rchild = node  # 插入node为右孩子
+                self.curNode.rchild = node  # 插入node为右孩子
             return True
         else:
             return False  # 树中已有包含key的结点，不再插入
 
-    def deleteBST(self, key):
+    def deleteBST(self, key, curNode, father):
         '''
         删除二叉排序树中的key
-        :param key:
+        :param key: 要删除的key
+        :param curNode: 当前结点
+        :param father: 当前结点的父结点
         :return:
         '''
-        pass
+        father = father
+
+        if curNode is None:  # 不存在key
+            return False
+        else:
+            if curNode.data == key:  # 找到key
+                self.deleteKey(curNode, father)
+            elif key < curNode.data:
+                self.deleteBST(key, curNode.lchild, curNode)
+            else:
+                self.deleteBST(key, curNode.rchild, curNode)
+
+    def deleteKey(self, curNode, father):
+        '''
+        从二叉排序树删除结点curNode，并重接它的左右孩子树
+        :param curNode: 当前结点
+        :param father: 当前结点的父结点
+        :return:
+        '''
+
+        if curNode.lchild is None:  # 左子树为空，重接它的右子树
+            if father.lchild == curNode:  # 当前结点是父结点的左结点
+                father.lchild = curNode.rchild
+            else:
+                father.rchild = curNode.rchild  # 当前结点是父结点的右结点
+
+        elif curNode.rchild is None:  # 右子树为空，重接它的左子树
+            if father.lchild == curNode:  # 当前结点是父结点的左结点
+                father.lchild = curNode.lchild
+            else:
+                father.rchild = curNode.lchild  # 当前结点是父结点的右结点
+
+        else:  # 左右子树均不为空
+
+            s = curNode.lchild  # 找左子树中curNode的直接前驱，即找左子树中的最右尽头结点
+            p = curNode         # p为s的父结点
+
+            while(s.rchild):
+                p = s
+                s = s.rchild
+            curNode.data = s.data  # 将curNode的data替换为直接前驱的data
+
+            if p != curNode:  # curNode的左孩子有右孩子，即while生效了
+                p.rchild = s.lchild  # 把s的左孩子赋给s的父结点的右孩子(因为s为最右结点，所以s是没有右孩子的)，即删掉了s结点（s结点的数据替换到curNode了）
+            else:             # curNode的左孩子没有右孩子
+                p.lchild = s.lchild  # 把s的左孩子赋给s的父结点的左孩子
+
+            del s
+
+        return True
+
 
     def inOrderTraverse(self, root):
         '''
@@ -80,4 +132,13 @@ if __name__ == "__main__":
     for i in l:
         bst.insertBST(i)
 
+    bst.inOrderTraverse(bst.root)
+    print
+    bst.deleteBST(35, bst.root, None)
+    bst.inOrderTraverse(bst.root)
+    print
+    bst.deleteBST(62, bst.root, None)
+    bst.inOrderTraverse(bst.root)
+    print
+    bst.deleteBST(93, bst.root, None)
     bst.inOrderTraverse(bst.root)
