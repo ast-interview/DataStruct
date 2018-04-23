@@ -1,6 +1,11 @@
 # coding: utf-8
 
+'''
+冒泡排序法
+'''
+
 class BubbleSort(object):
+
 
     def __init__(self, sq_list):
         self.sq_list = sq_list
