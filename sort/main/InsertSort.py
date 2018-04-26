@@ -28,7 +28,7 @@ class InsertSort(object):
                     self.sq_list[j+1] = self.sq_list[j]
                 else:
                     break  # 若大于前面元素，则终止循环，不再比较，将元素插入前面元素的后1位
-            if j == 0:  # 若比所有前面元素都小，则插入到首位
+            if j == 0 and cmp_elem < self.sq_list[j]:  # 若比所有前面元素都小，则插入到首位
                 self.sq_list[0] = cmp_elem
             else:
                 self.sq_list[j+1] = cmp_elem  # 插入前面元素的后1位
@@ -46,7 +46,7 @@ class InsertSort(object):
                     self.sq_list[j+1] = self.sq_list[j]
                 else:
                     break
-            if j == 0:
+            if j == 0 and cmp_elem > self.sq_list[j]:
                 self.sq_list[0] = cmp_elem
             else:
                 self.sq_list[j+1] = cmp_elem

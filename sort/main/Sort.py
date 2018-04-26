@@ -57,7 +57,7 @@ class Sort(object):
                     self.list[j+1] = self.list[j]
                 else:
                     break
-            if j == 0:
+            if j == 0 and cmp_elem < self.list[j]:
                 self.list[0] = cmp_elem
             else:
                 self.list[j+1] = cmp_elem
@@ -68,7 +68,7 @@ class Sort(object):
             for j in range(i-1, -1, -1):
                 if cmp_elem > self.list[j]:
                     self.list[j+1] = self.list[j]
-            if j == 0:
+            if j == 0 and cmp_elem > self.list[j]:
                 self.list[0] = cmp_elem
             else:
                 self.list[j+1] = cmp_elem
