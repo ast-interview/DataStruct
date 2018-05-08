@@ -24,16 +24,19 @@ class HeapSort(object):
         :param length: 当前待排列序列长度
         :return: 大顶堆
         '''
-        tmp = self.list[p]  # 备份当前父结点
-        i = 1
-        for i in range(p*2+1, length, i*2):
+
+        tmp_father = self.list[p]  # 备份当前父结点
+        i = p*2+1
+        while(i<=length):
+            # print("i: " + str(i))
             if i < length and self.list[i] < self.list[i+1]:  # 右孩子结点大于左孩子结点
                 i = i + 1  # i为值最大的结点的下标
-            if tmp > self.list[i]:  # 若父亲结点比左右孩子均大，则不交换
+            if tmp_father > self.list[i]:  # 若父亲结点比左右孩子均大，则不交换
                 break
             self.list[p] = self.list[i]  # 最大元素替换到父结点上
             p = i  # 记录替换前的最大元素的下标
-        self.list[p] = tmp  # 将父结点的元素置在之前最大元素的位置上
+            i = i*2+1  # 当前结点的左孩子结点
+        self.list[p] = tmp_father  # 将父结点的元素置在之前最大元素的位置上
 
     def sortAsc(self):
         '''
@@ -41,7 +44,7 @@ class HeapSort(object):
         :return:
         '''
         for i in range(self.len//2-1, -1, -1):  # 将self.list构造成大顶堆
-            self.heapAdjustBig(i, self.len)
+            self.heapAdjustBig(i, self.len-1)
 
         for i in range(self.len-1, 0, -1):
             self.swap(0, i)  # 将堆顶记录和未经排序的子序列的最后一个元素进行交换
@@ -66,17 +69,17 @@ class HeapSort(object):
         :param length: 当前待排列序列长度
         :return: 小顶堆
         '''
-        tmp = self.list[p]  # 备份当前父结点
-        i = 1
-        for i in range(p*2+1, length, i*2):
-            if self.list[i] > self.list[i+1]:  # 左孩子>右孩子
-                i = i + 1  # i为最小元素的下标
-            if tmp < self.list[i]:  # 父亲结点<左、右孩子
+        tmp_father = self.list[p]
+        i = p*2+1
+        while(i<=length):
+            if i < length and self.list[i] > self.list[i+1]:
+                i = i + 1
+            if tmp_father < self.list[i]:
                 break
-            self.list[p] = self.list[i]  # 将最小元素替换父结点元素
-            p = i  # 记录原最小元素的下标
-
-        self.list[p] = tmp  # 将原父结点元素放在原最小元素位置上
+            self.list[p] = self.list[i]
+            p = i
+            i = i*2+1
+        self.list[p] = tmp_father
 
     def sortDesc(self):
         '''
@@ -85,7 +88,7 @@ class HeapSort(object):
         '''
 
         for i in range(self.len//2+1, -1, -1):
-            self.heapAdjustLow(i, self.len)  # 构造小顶堆
+            self.heapAdjustLow(i, self.len-1)  # 构造小顶堆
 
         for i in range(self.len-1, 0, -1):
             self.swap(0, i)  # 将堆顶元素和未经排序的子序列的最后一个元素进行交换
