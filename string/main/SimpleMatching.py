@@ -33,4 +33,4 @@ if __name__ == "__main__":
     m = Match()
     a = "acdefgoogle"
     b = "google"
-    print m.index(a, b, 0)
+    print(m.index(a, b, 0))
